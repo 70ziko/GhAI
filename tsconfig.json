@@ -1,0 +1,34 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "esModuleInterop": true,
+    "strict": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitReturns": true,
+    "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true,
+    "composite": true,
+    "baseUrl": ".",
+    "paths": {
+      "@ghai/core": ["packages/core/src"],
+      "@ghai/types": ["packages/types/src"],
+      "@ghai/config": ["packages/config/src"]
+    }
+  },
+  "references": [
+    { "path": "packages/types" },
+    { "path": "packages/config" },
+    { "path": "packages/core" },
+    { "path": "apps/discord-bot" },
+    { "path": "apps/teams-bot" }
+  ],
+  "exclude": ["**/node_modules", "**/dist"]
+}

@@ -1,0 +1,23 @@
+{
+  "name": "ghai",
+  "version": "0.1.0",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "bun run --cwd packages/core build && bun run --cwd apps/discord-bot build && bun run --cwd apps/teams-bot build",
+    "dev:discord": "bun run --cwd apps/discord-bot dev",
+    "dev:teams": "bun run --cwd apps/teams-bot dev",
+    "test": "bun test",
+    "lint": "eslint ."
+  },
+  "devDependencies": {
+    "@types/node": "^20.8.0",
+    "@typescript-eslint/eslint-plugin": "^6.7.3",
+    "@typescript-eslint/parser": "^6.7.3",
+    "eslint": "^8.50.0",
+    "typescript": "^5.2.2"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "name": "@ghai/teams-bot",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "dev": "bun run --watch src/index.ts",
+    "start": "bun run dist/index.js",
+    "lint": "eslint src"
+  },
+  "dependencies": {
+    "@ghai/core": "workspace:*",
+    "@ghai/config": "workspace:*",
+    "@ghai/types": "workspace:*",
+    "botbuilder": "^4.20.0",
+    "zod": "^3.22.2"
+  },
+  "devDependencies": {
+    "typescript": "^5.2.2",
+    "@types/node": "^20.8.0"
+  }
+}
