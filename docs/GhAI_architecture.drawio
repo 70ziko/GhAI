@@ -1,6 +1,6 @@
 <mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:133.0) Gecko/20100101 Firefox/133.0" version="26.0.1">
   <diagram name="Strona-1" id="3Ey03jCOjN7yDJ5yqVIj">
-    <mxGraphModel dx="3520" dy="2342" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="3248" dy="2148" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -17,34 +17,50 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="2" value="Node.js" style="whiteSpace=wrap;strokeWidth=2;verticalAlign=top;" parent="1" vertex="1">
-          <mxGeometry x="159" y="5" width="837" height="633" as="geometry" />
+          <mxGeometry x="159" y="-144" width="837" height="782" as="geometry" />
         </mxCell>
-        <mxCell id="5" value="API 1" style="ellipse;aspect=fixed;strokeWidth=2;whiteSpace=wrap;" parent="2" vertex="1">
-          <mxGeometry x="112.41262135922331" y="82.39462809917356" width="69.31611570247934" height="69.31611570247934" as="geometry" />
+        <mxCell id="R8jTO43OwTZ_dCQ6szHo-95" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=12;startSize=8;endSize=8;" edge="1" parent="2" source="R8jTO43OwTZ_dCQ6szHo-91" target="13">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="7" value="API 2" style="ellipse;aspect=fixed;strokeWidth=2;whiteSpace=wrap;" parent="2" vertex="1">
-          <mxGeometry x="112.41262135922331" y="502.21487603305786" width="69.31611570247934" height="69.31611570247934" as="geometry" />
+        <mxCell id="R8jTO43OwTZ_dCQ6szHo-91" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;" vertex="1" parent="2">
+          <mxGeometry x="46" y="72" width="410.77" height="112" as="geometry" />
         </mxCell>
-        <mxCell id="9" value="API 3" style="ellipse;aspect=fixed;strokeWidth=2;whiteSpace=wrap;" parent="2" vertex="1">
-          <mxGeometry x="112.41262135922331" y="217.10330578512398" width="69.31611570247934" height="69.31611570247934" as="geometry" />
+        <mxCell id="5" value="API 1 OpenAI" style="ellipse;aspect=fixed;strokeWidth=2;whiteSpace=wrap;" parent="2" vertex="1">
+          <mxGeometry x="74.73262135922332" y="98.9992561983471" width="69.31611570247934" height="69.31611570247934" as="geometry" />
         </mxCell>
-        <mxCell id="10" value="API 4" style="ellipse;aspect=fixed;strokeWidth=2;whiteSpace=wrap;" parent="2" vertex="1">
-          <mxGeometry x="112.41262135922331" y="367.50619834710744" width="69.31611570247934" height="69.31611570247934" as="geometry" />
+        <mxCell id="7" value="API 2 OpenRouter" style="ellipse;aspect=fixed;strokeWidth=2;whiteSpace=wrap;" parent="2" vertex="1">
+          <mxGeometry x="176.73262135922332" y="101.99975206611578" width="69.31611570247934" height="69.31611570247934" as="geometry" />
+        </mxCell>
+        <mxCell id="9" value="API 3 ollama" style="ellipse;aspect=fixed;strokeWidth=2;whiteSpace=wrap;" parent="2" vertex="1">
+          <mxGeometry x="271.73262135922334" y="100.99661157024795" width="69.31611570247934" height="69.31611570247934" as="geometry" />
+        </mxCell>
+        <mxCell id="10" value="API 4 antrophic" style="ellipse;aspect=fixed;strokeWidth=2;whiteSpace=wrap;" parent="2" vertex="1">
+          <mxGeometry x="362.7326213592233" y="99.0023966942149" width="69.31611570247934" height="69.31611570247934" as="geometry" />
+        </mxCell>
+        <mxCell id="R8jTO43OwTZ_dCQ6szHo-97" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontSize=12;startSize=8;endSize=8;" edge="1" parent="2" source="13" target="R8jTO43OwTZ_dCQ6szHo-55">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="463" y="268" />
+            </Array>
+          </mxGeometry>
         </mxCell>
         <mxCell id="13" value="" style="whiteSpace=wrap;strokeWidth=2;" parent="2" vertex="1">
-          <mxGeometry x="60.95" y="36.62" width="323.05" height="540.38" as="geometry" />
+          <mxGeometry x="109" y="218" width="323.05" height="518.82" as="geometry" />
         </mxCell>
-        <mxCell id="R8jTO43OwTZ_dCQ6szHo-51" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;AI Agent&lt;br&gt;&lt;/h1&gt;&lt;p&gt;System: blah blah you&#39;re a devops&lt;br&gt;&lt;/p&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;tools:&amp;nbsp;&lt;/div&gt;&lt;div&gt;- github API&lt;/div&gt;&lt;div&gt;- modify excel/docs&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" vertex="1" parent="2">
-          <mxGeometry x="112.41" y="57.05" width="204.59" height="175.95" as="geometry" />
+        <mxCell id="R8jTO43OwTZ_dCQ6szHo-51" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;AI Agent&lt;br&gt;&lt;/h1&gt;&lt;p&gt;System: blah blah you&#39;re a devops&lt;br&gt;&lt;/p&gt;&lt;div&gt;workingRepo: string&lt;/div&gt;&lt;div&gt;// can there be more than one?&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;tools:&amp;nbsp;&lt;/div&gt;&lt;div&gt;- github API&lt;/div&gt;&lt;div&gt;- modify excel/docs&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" vertex="1" parent="2">
+          <mxGeometry x="168.23" y="270.9988309636651" width="204.59" height="287.78341232227484" as="geometry" />
         </mxCell>
         <mxCell id="R8jTO43OwTZ_dCQ6szHo-53" value="notification system" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="2">
-          <mxGeometry x="693" y="480" width="116" height="116" as="geometry" />
+          <mxGeometry x="693" y="592.9857819905213" width="116" height="116" as="geometry" />
         </mxCell>
         <mxCell id="R8jTO43OwTZ_dCQ6szHo-55" value="" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="2">
-          <mxGeometry x="525" y="99" width="251" height="251" as="geometry" />
+          <mxGeometry x="525" y="122.30331753554502" width="251" height="251" as="geometry" />
         </mxCell>
         <mxCell id="R8jTO43OwTZ_dCQ6szHo-56" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;TOOLS&lt;br&gt;&lt;/h1&gt;READ:&lt;br&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;- github&lt;/div&gt;&lt;div&gt;- spreadsheets&lt;/div&gt;&lt;div&gt;- docs&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;WRITE:&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;-spreedsheets&lt;/div&gt;&lt;div&gt;- docs&lt;/div&gt;&lt;div&gt;- github issues/simple commits&lt;br&gt;&lt;/div&gt;" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" vertex="1" parent="2">
-          <mxGeometry x="536" y="118" width="204.59" height="227" as="geometry" />
+          <mxGeometry x="536" y="145.77567140600314" width="204.59" height="280.43285939968405" as="geometry" />
+        </mxCell>
+        <mxCell id="R8jTO43OwTZ_dCQ6szHo-93" value="AI providers" style="text;strokeColor=none;fillColor=none;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;" vertex="1" parent="2">
+          <mxGeometry x="199.39" y="72" width="104" height="30" as="geometry" />
         </mxCell>
         <mxCell id="12" value="" style="whiteSpace=wrap;strokeWidth=2;" parent="1" vertex="1">
           <mxGeometry x="-566" y="2" width="235.52" height="639" as="geometry" />
