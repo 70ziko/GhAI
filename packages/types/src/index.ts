@@ -1,5 +1,3 @@
-// Common types for both Discord and Teams bots
-
 export interface Message {
   content: string;
   userId: string;

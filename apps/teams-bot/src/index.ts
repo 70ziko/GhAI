@@ -15,13 +15,11 @@ if (!config.teams.appId || !config.teams.appPassword) {
   throw new Error('TEAMS_APP_ID and TEAMS_APP_PASSWORD are required');
 }
 
-// Create adapter
 const adapter = new BotFrameworkAdapter({
   appId: config.teams.appId,
   appPassword: config.teams.appPassword,
 });
 
-// Error handler with more detailed logging
 adapter.onTurnError = async (context, error) => {
   console.error('Bot error:', {
     error: error.message,
@@ -62,7 +60,6 @@ class TeamsBot extends ActivityHandler {
 
 const bot = new TeamsBot();
 
-// Helper function to read the request body
 const getRequestBody = async (req: IncomingMessage): Promise<string> => {
   const chunks: Buffer[] = [];
   
@@ -73,7 +70,6 @@ const getRequestBody = async (req: IncomingMessage): Promise<string> => {
   return Buffer.concat(chunks).toString('utf8');
 };
 
-// Create HTTP server with improved error handling
 const server = createServer(async (req: IncomingMessage, res: ServerResponse) => {
   if (req.method !== 'POST') {
     res.writeHead(200);
