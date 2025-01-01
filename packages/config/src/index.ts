@@ -1,16 +1,13 @@
 import { z } from 'zod';
 
 const envSchema = z.object({
-  // Discord configuration
   DISCORD_TOKEN: z.string().optional(),
   DISCORD_CLIENT_ID: z.string().optional(),
   DISCORD_GUILD_ID: z.string().optional(),
   
-  // Teams configuration
   TEAMS_APP_ID: z.string().optional(),
   TEAMS_APP_PASSWORD: z.string().optional(),
   
-  // Common configuration
   NODE_ENV: z.enum(['development', 'production', 'test']).default('development'),
   LOG_LEVEL: z.enum(['debug', 'info', 'warn', 'error']).default('info'),
 });

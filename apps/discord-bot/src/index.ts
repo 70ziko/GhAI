@@ -22,7 +22,6 @@ client.once(Events.ClientReady, (readyClient) => {
 });
 
 client.on(Events.MessageCreate, async (message) => {
-  // Ignore messages from bots
   if (message.author.bot) return;
 
   const commonMessage: CommonMessage = {
@@ -43,7 +42,6 @@ client.on(Events.MessageCreate, async (message) => {
 
 client.login(config.discord.token);
 
-// Handle process termination
 process.on('SIGINT', () => {
   client.destroy();
   process.exit(0);
