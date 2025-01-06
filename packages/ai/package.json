@@ -1,0 +1,27 @@
+{
+  "name": "@ghai/ai",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "lint": "eslint src"
+  },
+  "dependencies": {
+    "@ghai/core": "workspace:*",
+    "@ghai/types": "workspace:*",
+    "@anthropic-ai/sdk": "latest",
+    "@anthropic-ai/bedrock-sdk": "latest",
+    "@anthropic-ai/vertex-sdk": "latest",
+    "@google/generative-ai": "latest",
+    "openai": "latest",
+    "delay": "latest",
+    "zod": "^3.22.2"
+  },
+  "devDependencies": {
+    "typescript": "^5.2.2"
+  }
+}
