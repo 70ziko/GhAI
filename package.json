@@ -7,7 +7,7 @@
     "packages/*"
   ],
   "scripts": {
-    "build": "bun run --cwd packages/core build && bun run --cwd apps/discord-bot build && bun run --cwd apps/teams-bot build",
+    "build": "rm -rf packages/*/dist apps/*/dist && bun run --cwd packages/types build && bun run --cwd packages/config build && bun run --cwd packages/core build && bun run --cwd apps/discord-bot build && bun run --cwd apps/teams-bot build",
     "dev:discord": "bun run --cwd apps/discord-bot dev",
     "dev:teams": "bun run --cwd apps/teams-bot dev",
     "test": "bun test",

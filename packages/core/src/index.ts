@@ -25,7 +25,7 @@ export class MessageHandler {
     }
   }
 
-  async validateUser(user: User): Promise<boolean> {
+  async validateUser(_user: User): Promise<boolean> {
     // TODO: Implement user validation logic
     // This is a placeholder for future user validation/permissions
     return true;
