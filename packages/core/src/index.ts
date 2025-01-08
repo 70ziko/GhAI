@@ -17,7 +17,7 @@ export class MessageHandler {
         content: `Received message from ${message.platform}: ${message.content}`
       };
     } catch (error) {
-      console.error('Error processing message:', error);
+      console.error('Error processing message:', error); 
       return {
         content: 'An error occurred while processing your message',
         error: error instanceof Error ? error.message : 'UNKNOWN_ERROR'
