@@ -20,6 +20,7 @@ A monorepo project containing AI-powered assistant implementations for Discord a
 - [Bun](https://bun.sh) (JavaScript runtime and package manager)
 - Discord Bot Token (for Discord bot)
 - Microsoft Teams App credentials (for Teams bot)
+- AI provider's API credentials
 
 ## Setup
 
