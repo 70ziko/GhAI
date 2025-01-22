@@ -10,9 +10,9 @@ export class MessageHandler {
           error: 'EMPTY_CONTENT'
         };
       }
+      
+      console.log('Received message:', message);
 
-      // TODO: Implement actual message processing logic
-      // This is a placeholder that will be replaced with actual AI/processing logic
       return {
         content: `Received message from ${message.platform}: ${message.content}`
       };
@@ -24,17 +24,10 @@ export class MessageHandler {
       };
     }
   }
-
-  async validateUser(_user: User): Promise<boolean> {
-    // TODO: Implement user validation logic
-    // This is a placeholder for future user validation/permissions
-    return true;
-  }
 }
 
 export const createMessageHandler = (): MessageHandler => {
   return new MessageHandler();
 };
 
-// Export configuration for convenience
 export { config };

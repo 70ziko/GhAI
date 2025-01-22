@@ -96,7 +96,17 @@ export function convertAnthropicContentToGemini(
 export function convertAnthropicMessageToGemini(message: Anthropic.Messages.MessageParam): Content {
 	return {
 		role: message.role === "assistant" ? "model" : "user",
-		parts: convertAnthropicContentToGemini(message.content),
+		parts: convertAnthropicContentToGemini(
+			Array.isArray(message.content)
+				? message.content.filter(
+						(block) =>
+							block.type === "text" ||
+							block.type === "image" ||
+							block.type === "tool_use" ||
+							block.type === "tool_result"
+				  )
+				: message.content
+		),
 	}
 }
 
@@ -190,6 +200,8 @@ export function convertGeminiResponseToAnthropic(
 		usage: {
 			input_tokens: response.usageMetadata?.promptTokenCount ?? 0,
 			output_tokens: response.usageMetadata?.candidatesTokenCount ?? 0,
+			cache_creation_input_tokens: 0,
+			cache_read_input_tokens: 0,
 		},
 	}
 }

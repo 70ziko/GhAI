@@ -1,4 +1,3 @@
-import { Anthropic } from "@anthropic-ai/sdk";
 import { ApiConfiguration, ModelInfo, ApiMessage } from "@ghai/types";
 import { AnthropicHandler } from "./providers/anthropic";
 import { ApiStream } from "./transform/stream";
