@@ -1,3 +1,4 @@
+export * from "./api";
 export interface Message {
   content: string;
   userId: string;
@@ -49,10 +50,30 @@ export type ApiProvider =
   | "openai-native";
 
 export interface ApiHandlerOptions {
-  apiModelId?: string;
-  apiKey?: string;
-  anthropicBaseUrl?: string;
-  maxTokens?: number;
+  apiModelId?: string
+  apiKey?: string // anthropic
+  anthropicBaseUrl?: string
+  openRouterApiKey?: string
+  openRouterModelId?: string
+  openRouterModelInfo?: ModelInfo
+  awsAccessKey?: string
+  awsSecretKey?: string
+  awsSessionToken?: string
+  awsRegion?: string
+  awsUseCrossRegionInference?: boolean
+  vertexProjectId?: string
+  vertexRegion?: string
+  openAiBaseUrl?: string
+  openAiApiKey?: string
+  openAiModelId?: string
+  ollamaModelId?: string
+  ollamaBaseUrl?: string
+  lmStudioModelId?: string
+  lmStudioBaseUrl?: string
+  geminiApiKey?: string
+  openAiNativeApiKey?: string
+  deepSeekApiKey?: string
+  azureApiVersion?: string
 }
 
 export type ApiConfiguration = ApiHandlerOptions & {
