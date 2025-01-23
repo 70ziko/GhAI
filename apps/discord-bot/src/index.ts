@@ -34,7 +34,9 @@ client.on(Events.MessageCreate, async (message) => {
   const response = await messageHandler.processMessage(commonMessage);
   
   try {
-    await message.reply(response.content);
+    await message.channel.sendTyping()
+    await message.react('👍');
+    await message.channel.send(response.content);
   } catch (error) {
     console.error('Error sending message:', error);
   }
