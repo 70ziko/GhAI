@@ -5,7 +5,7 @@ import {
 	azureOpenAiDefaultApiVersion,
 	ModelInfo,
 	openAiModelInfoSaneDefaults,
-} from "../../shared/api"
+} from "@ghai/types"
 import { ApiHandler } from "../index"
 import { convertToOpenAiMessages } from "../transform/openai-format"
 import { ApiStream } from "../transform/stream"

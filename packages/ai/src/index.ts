@@ -8,7 +8,11 @@ export interface ApiHandler {
 }
 
 export function buildApiHandler(configuration: ApiConfiguration): ApiHandler {
-    // For now, we only support Anthropic
-    const { apiProvider, ...options } = configuration;
-    return new AnthropicHandler(options);
+  const { apiProvider, ...options } = configuration;
+  switch (apiProvider) {
+    case "anthropic":
+      return new AnthropicHandler(options);
+    default:
+      throw new Error(`Unsupported API provider: ${apiProvider}`);
+  }
 }
