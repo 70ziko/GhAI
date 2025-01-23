@@ -1,0 +1,10 @@
+services:
+  ghai:
+    build: .
+    env_file: .env
+    ports:
+      - "3000:3000"  # Discord bot
+      - "3978:3978"  # Teams bot
+    restart: unless-stopped
+    environment:
+      - NODE_ENV=production

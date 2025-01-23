@@ -1,0 +1,17 @@
+.git
+.gitignore
+node_modules
+**/node_modules
+dist
+**/dist
+# .env
+.env.*
+!.env.template
+*.log
+.vscode
+.idea
+*.md
+docs/
+*.swp
+*.swo
+.DS_Store
