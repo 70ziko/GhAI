@@ -18,15 +18,14 @@
     "composite": true,
     "baseUrl": ".",
     "paths": {
-      "@ghai/core": ["packages/core/src"],
-      "@ghai/types": ["packages/types/src"],
-      "@ghai/config": ["packages/config/src"]
+      "@ghai/*": ["./packages/*/src"]
     }
   },
   "references": [
     { "path": "packages/types" },
     { "path": "packages/config" },
     { "path": "packages/core" },
+    { "path": "packages/ai" },
     { "path": "apps/discord-bot" },
     { "path": "apps/teams-bot" }
   ],

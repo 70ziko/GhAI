@@ -3,11 +3,12 @@
   "compilerOptions": {
     "outDir": "./dist",
     "rootDir": "./src",
-    "composite": true
+    "composite": true,
+    "declaration": true
   },
-  "include": ["src/**/*"],
   "references": [
     { "path": "../types" },
     { "path": "../config" }
-  ]
+  ],
+  "include": ["src/**/*"]
 }

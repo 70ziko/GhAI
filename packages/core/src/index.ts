@@ -1,4 +1,4 @@
-import type { Message, BotResponse} from '@ghai/types';
+import type { Message, BotResponse } from '@ghai/types';
 import { config } from '@ghai/config';
 
 export class MessageHandler {
