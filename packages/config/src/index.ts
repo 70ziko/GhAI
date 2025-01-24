@@ -3,7 +3,7 @@ import dotenv from 'dotenv';
 import path from 'path';
 import { cwd } from 'process';
 
-dotenv.config({path: path.join(cwd(), '../../.env')});
+dotenv.config({path: path.join(cwd(), '../../../.env')});
 
 const envSchema = z.object({
   DISCORD_TOKEN: z.string().optional(),

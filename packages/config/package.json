@@ -6,7 +6,7 @@
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "scripts": {
-    "build": "tsc",
+    "build": "bun x tsc -b",
     "dev": "tsc --watch",
     "lint": "eslint src"
   },
@@ -15,7 +15,7 @@
     "dotenv": "^16.0.0"
   },
   "devDependencies": {
-    "typescript": "^5.2.2",
-    "@types/node": "^20.8.0"
+    "typescript": "^5.7.3",
+    "@types/node": "^22.10.10"
   }
 }

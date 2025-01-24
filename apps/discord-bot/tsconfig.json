@@ -6,6 +6,8 @@
     "composite": true
   },
   "include": ["src/**/*"],
+  "exclude": ["node_modules", "dist"],
+  "build": true,
   "references": [
     { "path": "../../packages/core" },
     { "path": "../../packages/types" },

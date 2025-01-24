@@ -3,9 +3,12 @@
   "compilerOptions": {
     "outDir": "./dist",
     "rootDir": "./src",
-    "composite": true
+    "composite": true,
+    "declaration": true
   },
   "include": ["src/**/*"],
+  "exclude": ["node_modules", "dist"],
+  "build": true,
   "references": [
     { "path": "../types" }
   ]

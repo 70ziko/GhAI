@@ -6,7 +6,7 @@
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "scripts": {
-    "build": "tsc",
+    "build": "bun x tsc -b",
     "dev": "tsc --watch",
     "lint": "eslint src"
   },
@@ -14,6 +14,6 @@
     "zod": "^3.22.2"
   },
   "devDependencies": {
-    "typescript": "^5.2.2"
+    "typescript": "^5.7.3"
   }
 }

@@ -7,7 +7,7 @@
     "packages/*"
   ],
   "scripts": {
-    "build": "rm -rf packages/*/dist apps/*/dist && bun x tsc -b packages/types && bun x tsc -b packages/config && bun x tsc -b packages/core && bun x tsc -b packages/ai && bun x tsc -b apps/discord-bot && bun x tsc -b apps/teams-bot",
+    "build": "rm -rf packages/*/dist apps/*/dist && tsc -b packages/types && tsc -b packages/config && tsc -b packages/core && tsc -b packages/ai && tsc -b apps/discord-bot && tsc -b apps/teams-bot",
     "clean": "rm -rf packages/*/dist apps/*/dist",
     "dev:discord": "bun run --cwd apps/discord-bot dev",
     "dev:teams": "bun run --cwd apps/teams-bot dev",

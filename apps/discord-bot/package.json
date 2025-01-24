@@ -4,7 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "tsc",
+    "build": "bun x tsc -b",
     "dev": "bun run --watch src/index.ts",
     "start": "bun run dist/index.js",
     "lint": "eslint src"
@@ -17,7 +17,7 @@
     "zod": "^3.22.2"
   },
   "devDependencies": {
-    "typescript": "^5.2.2",
-    "@types/node": "^20.8.0"
+    "typescript": "^5.7.3",
+    "@types/node": "^22.10.10"
   }
 }
