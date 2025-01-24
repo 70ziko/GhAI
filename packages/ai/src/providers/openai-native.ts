@@ -1,4 +1,3 @@
-import { Anthropic } from "@anthropic-ai/sdk"
 import OpenAI from "openai"
 import { ApiHandler } from "../"
 import {
@@ -7,7 +6,8 @@ import {
 	openAiNativeDefaultModelId,
 	OpenAiNativeModelId,
 	openAiNativeModels,
-} from "../../shared/api"
+	ApiMessage,
+} from "@ghai/types"
 import { convertToOpenAiMessages } from "../transform/openai-format"
 import { ApiStream } from "../transform/stream"
 
@@ -22,15 +22,26 @@ export class OpenAiNativeHandler implements ApiHandler {
 		})
 	}
 
-	async *createMessage(systemPrompt: string, messages: Anthropic.Messages.MessageParam[]): ApiStream {
+	async *createMessage(systemPrompt: string, messages: ApiMessage[]): ApiStream {
 		switch (this.getModel().id) {
 			case "o1-preview":
 			case "o1-mini": {
 				// o1 doesnt support streaming, non-1 temp, or system prompt
 				const response = await this.client.chat.completions.create({
-					model: this.getModel().id,
-					messages: [{ role: "user", content: systemPrompt }, ...convertToOpenAiMessages(messages)],
-				})
+          model: this.getModel().id,
+          messages: [
+            { role: "user", content: systemPrompt },
+            ...convertToOpenAiMessages(
+              messages.filter(
+                (
+                  message
+                ): message is ApiMessage & { role: "user" | "assistant" } =>
+                  message.role !== "system"
+              )
+            ),
+            { role: "system", content: systemPrompt },
+          ],
+        });
 				yield {
 					type: "text",
 					text: response.choices[0]?.message.content || "",
@@ -44,13 +55,24 @@ export class OpenAiNativeHandler implements ApiHandler {
 			}
 			default: {
 				const stream = await this.client.chat.completions.create({
-					model: this.getModel().id,
-					// max_completion_tokens: this.getModel().info.maxTokens,
-					temperature: 0,
-					messages: [{ role: "system", content: systemPrompt }, ...convertToOpenAiMessages(messages)],
-					stream: true,
-					stream_options: { include_usage: true },
-				})
+          model: this.getModel().id,
+          // max_completion_tokens: this.getModel().info.maxTokens,
+          temperature: 0,
+          messages: [
+            { role: "system", content: systemPrompt },
+            ...convertToOpenAiMessages(
+              messages.filter(
+                (
+                  message
+                ): message is ApiMessage & { role: "user" | "assistant" } =>
+                  message.role !== "system"
+              )
+            ),
+            { role: "system", content: systemPrompt },
+          ],
+          stream: true,
+          stream_options: { include_usage: true },
+        });
 
 				for await (const chunk of stream) {
 					const delta = chunk.choices[0]?.delta

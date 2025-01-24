@@ -17,6 +17,7 @@ export interface BotResponse {
   error?: string;
 }
 
+
 export interface ModelInfo {
   name: string;
   maxTokens?: number;
@@ -24,12 +25,16 @@ export interface ModelInfo {
   supportsImages?: boolean;
   supportsComputerUse?: boolean;
   supportsPromptCache: boolean;
-  pricing: {
+  pricing?: {
     input: number;
     output: number;
     cacheWrites?: number;
     cacheReads?: number;
   };
+  inputPrice?: number;
+  outputPrice?: number;
+  cacheWritesPrice?: number;
+  cacheReadsPrice?: number;
   description?: string;
 }
 

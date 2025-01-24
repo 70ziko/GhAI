@@ -42,26 +42,7 @@ export type ApiConfiguration = ApiHandlerOptions & {
 }
 
 // Models
-
-export interface ModelInfo {
-    name: string;
-    maxTokens?: number;
-    contextWindow?: number;
-    supportsImages?: boolean;
-    supportsComputerUse?: boolean;
-    supportsPromptCache: boolean;
-    pricing?: {
-      input: number;
-      output: number;
-      cacheWrites?: number;
-      cacheReads?: number;
-    };
-    inputPrice?: number;
-    outputPrice?: number;
-    cacheWritesPrice?: number;
-    cacheReadsPrice?: number;
-    description?: string;
-  }
+import { ModelInfo } from "./index"
 
 // Anthropic
 // https://docs.anthropic.com/en/docs/about-claude/models
@@ -257,7 +238,9 @@ export const openAiModelInfoSaneDefaults: ModelInfo = {
     pricing: {
         input: 0,
         output: 0,
-    }
+        cacheWrites: 0 as number | undefined,
+        cacheReads: 0 as number | undefined,
+    } as const,
 }
 
 // Gemini
@@ -353,6 +336,10 @@ export const openAiNativeModels = {
         supportsPromptCache: false,
         inputPrice: 15,
         outputPrice: 60,
+        pricing: {
+            input: 15,
+            output: 60,
+        },
     },
     "o1-mini": {
         name: "O1 Mini",
@@ -362,6 +349,10 @@ export const openAiNativeModels = {
         supportsPromptCache: false,
         inputPrice: 3,
         outputPrice: 12,
+        pricing: {
+            input: 3,
+            output: 12,
+        },
     },
     "gpt-4o": {
         name: "GPT-4O",
@@ -371,6 +362,10 @@ export const openAiNativeModels = {
         supportsPromptCache: false,
         inputPrice: 5,
         outputPrice: 15,
+        pricing: {
+            input: 5,
+            output: 15,
+        },
     },
     "gpt-4o-mini": {
         name: "GPT-4O Mini",
@@ -380,6 +375,10 @@ export const openAiNativeModels = {
         supportsPromptCache: false,
         inputPrice: 0.15,
         outputPrice: 0.6,
+        pricing: {
+            input: 0.15,
+            output: 0.6,
+        },
     },
 } as const satisfies Record<string, ModelInfo>
 

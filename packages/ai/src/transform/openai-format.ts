@@ -158,6 +158,7 @@ export function convertToAnthropicMessage(
 			{
 				type: "text",
 				text: openAiMessage.content || "",
+				citations: [],
 			},
 		],
 		model: completion.model,
@@ -178,6 +179,8 @@ export function convertToAnthropicMessage(
 		usage: {
 			input_tokens: completion.usage?.prompt_tokens || 0,
 			output_tokens: completion.usage?.completion_tokens || 0,
+			cache_creation_input_tokens: 0,
+			cache_read_input_tokens: 0,
 		},
 	}
 

@@ -1,7 +1,6 @@
-import { Anthropic } from "@anthropic-ai/sdk"
 import OpenAI from "openai"
 import { ApiHandler } from "../"
-import { ApiHandlerOptions, ModelInfo, openAiModelInfoSaneDefaults } from "@ghai/types"
+import { ApiHandlerOptions, ModelInfo, openAiModelInfoSaneDefaults, ApiMessage } from "@ghai/types"
 import { convertToOpenAiMessages } from "../transform/openai-format"
 import { ApiStream } from "../transform/stream"
 
@@ -17,10 +16,10 @@ export class OllamaHandler implements ApiHandler {
 		})
 	}
 
-	async *createMessage(systemPrompt: string, messages: Anthropic.Messages.MessageParam[]): ApiStream {
+	async *createMessage(systemPrompt: string, messages: ApiMessage[]): ApiStream {
 		const openAiMessages: OpenAI.Chat.ChatCompletionMessageParam[] = [
 			{ role: "system", content: systemPrompt },
-			...convertToOpenAiMessages(messages),
+			...convertToOpenAiMessages(messages.filter((message): message is ApiMessage & { role: "user" | "assistant" } => message.role !== "system")),
 		]
 
 		const stream = await this.client.chat.completions.create({
@@ -43,7 +42,15 @@ export class OllamaHandler implements ApiHandler {
 	getModel(): { id: string; info: ModelInfo } {
 		return {
 			id: this.options.ollamaModelId || "",
-			info: openAiModelInfoSaneDefaults,
+			info: {
+				...openAiModelInfoSaneDefaults,
+				pricing: {	// check later
+					input: 0,
+					output: 0,
+					cacheWrites: 0,
+					cacheReads: 0,
+				},
+			},
 		}
 	}
 }

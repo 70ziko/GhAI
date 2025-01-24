@@ -1,10 +1,10 @@
-import { Anthropic } from "@anthropic-ai/sdk"
 import OpenAI, { AzureOpenAI } from "openai"
 import {
 	ApiHandlerOptions,
 	azureOpenAiDefaultApiVersion,
 	ModelInfo,
 	openAiModelInfoSaneDefaults,
+	ApiMessage,
 } from "@ghai/types"
 import { ApiHandler } from "../index"
 import { convertToOpenAiMessages } from "../transform/openai-format"
@@ -31,10 +31,10 @@ export class OpenAiHandler implements ApiHandler {
 		}
 	}
 
-	async *createMessage(systemPrompt: string, messages: Anthropic.Messages.MessageParam[]): ApiStream {
+	async *createMessage(systemPrompt: string, messages: ApiMessage[]): ApiStream {
 		const openAiMessages: OpenAI.Chat.ChatCompletionMessageParam[] = [
 			{ role: "system", content: systemPrompt },
-			...convertToOpenAiMessages(messages),
+			...convertToOpenAiMessages(messages.filter((message): message is ApiMessage & { role: "user" | "assistant" } => message.role !== "system")), 
 		]
 		const stream = await this.client.chat.completions.create({
 			model: this.options.openAiModelId ?? "",
